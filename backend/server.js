@@ -13,7 +13,7 @@ import orderRoutes from "./routes/orderRoutes.js";
 //app config
 
 const app = express();
-const PORT = process.env.PORT | 9000;
+const PORT = process.env.PORT || 9000;
 
 
 //middleware
@@ -27,7 +27,7 @@ connectDB();
 //API EndPoints
 
 app.use("/api/food",foodRouter);
-app.use("/images",express.static('uploads'));
+app.use("/uploads",express.static('uploads'));
 app.use("/api/user",userRouter);
 app.use("/api/cart",cartRoute);
 app.use("/api/order",orderRoutes);
